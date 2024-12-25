@@ -5,20 +5,12 @@ import { useState, useEffect } from "react";
 import api from "@/utils/api";
 import Pfp from "@/components/Pfp";
 import useDeviceWidth from "@/hooks/useDeviceWidth";
+import useImage from "@/hooks/useImage";
 
 export default function Image() {
   const { photoId } = useLocalSearchParams();
+  const image = useImage(Number(photoId));
   const deviceWidth = useDeviceWidth();
-
-  const [image, setImage] = useState("");
-  useEffect(() => {
-    const getImage = async () => {
-      const response = await api.get(`/api/v1/image/${photoId}`);
-      console.log(response.data);
-      setImage(response.data.imageLink.url);
-    };
-    getImage();
-  }, []);
 
   return (
     <SafeAreaView style={styles.photoPageContainer}>
