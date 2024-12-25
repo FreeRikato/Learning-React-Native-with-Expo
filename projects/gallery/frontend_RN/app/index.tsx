@@ -25,7 +25,7 @@ export default function App() {
     return (
       <TapGestureHandler onActivated={() => onSinglePhotoClick(item.id)}>
         <View>
-          <Pfp url={item.url} widthStyle={width} />
+          <Pfp url={item.url} widthStyle={width / 3 - 3} />
         </View>
       </TapGestureHandler>
     );

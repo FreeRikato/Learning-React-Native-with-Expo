@@ -6,6 +6,7 @@ export default function RootLayout() {
     <GestureHandlerRootView>
       <Stack>
         <Stack.Screen name="index" options={{ headerTitle: "Chill Otaku" }} />
+        <Stack.Screen name="[photoId]" options={{ headerShown: false }} />
       </Stack>
     </GestureHandlerRootView>
   );

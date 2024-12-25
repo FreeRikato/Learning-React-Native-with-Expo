@@ -5,10 +5,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
+  photoPageContainer: {
+    flex: 1,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   imageGroup: {},
   imageContainer: {
     margin: 1,
-    height: 128, // Explicitly set the height
     aspectRatio: 1,
   },
 });

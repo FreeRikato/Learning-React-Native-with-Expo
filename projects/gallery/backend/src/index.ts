@@ -14,6 +14,13 @@ app.get("/api/v1/images", (req: Request, res: Response) => {
   res.json({ imageData: imageURL });
 });
 
+app.get("/api/v1/image/:photoId", (req: Request, res: Response) => {
+  const photoId = req.params.photoId;
+  res.json({
+    imageLink: imageURL[Number(photoId) - 1],
+  });
+});
+
 app.listen(3000, () => {
   console.log("server running successfully");
 });
