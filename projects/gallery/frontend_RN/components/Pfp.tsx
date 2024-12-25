@@ -10,10 +10,16 @@ interface PfpProps {
 export default function Pfp({ url, widthStyle }: PfpProps) {
   return (
     <>
-      <Image
-        source={{ uri: url }}
-        style={[styles.imageContainer, { height: widthStyle }]}
-      />
+      {!url ? (
+        <>
+          <Text>No image to render</Text>
+        </>
+      ) : (
+        <Image
+          source={{ uri: url }}
+          style={[styles.imageContainer, { height: widthStyle }]}
+        />
+      )}
     </>
   );
 }

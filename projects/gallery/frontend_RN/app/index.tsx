@@ -1,4 +1,4 @@
-import { SafeAreaView, FlatList, View } from "react-native";
+import { SafeAreaView, FlatList, View, Image } from "react-native";
 import styles from "@/styles/global";
 import Pfp from "@/components/Pfp";
 import useImages from "@/hooks/useImages";
@@ -17,13 +17,17 @@ export default function App() {
   const router = useRouter(); // navigate to a single photo
   const width = useDeviceWidth(); // get Device dimenstion => width
 
-  const onSinglePhotoClick = (id: number) => {
-    router.push(`/${id}`);
+  const onSinglePhotoClick = (id: number, url: string) => {
+    Image.prefetch(url).then(() => {
+      router.push(`/${id}`);
+    });
   };
 
   const renderItem = ({ item }: { item: imageItem }) => {
     return (
-      <TapGestureHandler onActivated={() => onSinglePhotoClick(item.id)}>
+      <TapGestureHandler
+        onActivated={() => onSinglePhotoClick(item.id, item.url)}
+      >
         <View>
           <Pfp url={item.url} widthStyle={width / 3 - 3} />
         </View>
