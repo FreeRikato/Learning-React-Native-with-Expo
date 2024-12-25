@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text } from "react-native";
+import { ActivityIndicator, Image } from "react-native";
 import styles from "@/styles/global";
 
 interface PfpProps {
@@ -11,9 +11,7 @@ export default function Pfp({ url, widthStyle }: PfpProps) {
   return (
     <>
       {!url ? (
-        <>
-          <Text>No image to render</Text>
-        </>
+        <ActivityIndicator />
       ) : (
         <Image
           source={{ uri: url }}
