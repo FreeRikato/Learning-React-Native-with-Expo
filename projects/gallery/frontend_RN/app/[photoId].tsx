@@ -1,8 +1,6 @@
 import styles from "@/styles/global";
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import { useState, useEffect } from "react";
-import api from "@/utils/api";
 import Pfp from "@/components/Pfp";
 import useDeviceWidth from "@/hooks/useDeviceWidth";
 import useImage from "@/hooks/useImage";
