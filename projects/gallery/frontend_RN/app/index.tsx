@@ -1,23 +1,31 @@
-import { SafeAreaView, FlatList, View, Text } from "react-native";
+import { SafeAreaView, FlatList, View } from "react-native";
 import styles from "@/styles/global";
 import Pfp from "@/components/Pfp";
 import useImages from "@/hooks/useImages";
 import useDeviceWidth from "@/hooks/useDeviceWidth";
 import { TapGestureHandler } from "react-native-gesture-handler";
+import { useRouter } from "expo-router";
+
+interface imageItem {
+  id: number;
+  url: string;
+}
 
 export default function App() {
-  const images = useImages();
-  const width = useDeviceWidth();
+  // Hooks
+  const images = useImages(); // gets Images from the backend
+  const router = useRouter(); // navigate to a single photo
+  const width = useDeviceWidth(); // get Device dimenstion => width
 
-  const onSinglePhotoClick = () => {
-    alert("Clicked a photo");
+  const onSinglePhotoClick = (id: number) => {
+    router.push(`/${id}`);
   };
 
-  const renderItem = ({ item }: { item: string }) => {
+  const renderItem = ({ item }: { item: imageItem }) => {
     return (
-      <TapGestureHandler onActivated={onSinglePhotoClick}>
+      <TapGestureHandler onActivated={() => onSinglePhotoClick(item.id)}>
         <View>
-          <Pfp url={item} widthStyle={width} />
+          <Pfp url={item.url} widthStyle={width} />
         </View>
       </TapGestureHandler>
     );
@@ -30,7 +38,7 @@ export default function App() {
         data={images}
         renderItem={renderItem}
         numColumns={3}
-        keyExtractor={(_, index) => index.toString()}
+        keyExtractor={(item) => item.id.toString()}
       />
     </SafeAreaView>
   );

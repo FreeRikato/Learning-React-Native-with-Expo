@@ -8,6 +8,7 @@ export default function useImages() {
     const getImages = async () => {
       try {
         const response = await api.get("/api/v1/images");
+        console.log(JSON.stringify(response.data.imageData));
 
         setImages(response.data.imageData);
       } catch (e: any) {
