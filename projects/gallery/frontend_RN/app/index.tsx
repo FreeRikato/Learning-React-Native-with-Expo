@@ -1,4 +1,4 @@
-import { SafeAreaView, FlatList, View, Image } from "react-native";
+import { SafeAreaView, FlatList, View, Image, Text } from "react-native";
 import styles from "@/styles/global";
 import Pfp from "@/components/Pfp";
 import useImages from "@/hooks/useImages";
