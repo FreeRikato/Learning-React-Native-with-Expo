@@ -33,9 +33,6 @@ export default function Index() {
             <Text style={styles.routeText}>Swipe component</Text>
           </TouchableOpacity>
         </Link>
-        <TouchableOpacity>
-          <Text style={styles.routeText}>Photo Gallery</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );

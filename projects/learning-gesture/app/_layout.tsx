@@ -13,10 +13,22 @@ export default function RootLayout() {
             presentation: "modal",
           }}
         />
-        <Stack.Screen name="Swipe" options={{ presentation: "modal" }} />
-        <Stack.Screen name="Drag" options={{ presentation: "modal" }} />
-        <Stack.Screen name="Pan-Drag" options={{ presentation: "modal" }} />
-        <Stack.Screen name="Pinch-Zoom" options={{ presentation: "modal" }} />
+        <Stack.Screen
+          name="Swipe"
+          options={{ headerShown: true, presentation: "modal" }}
+        />
+        <Stack.Screen
+          name="Drag"
+          options={{ headerShown: true, presentation: "modal" }}
+        />
+        <Stack.Screen
+          name="Pan-Drag"
+          options={{ headerShown: true, presentation: "modal" }}
+        />
+        <Stack.Screen
+          name="Pinch-Zoom"
+          options={{ headerShown: true, presentation: "modal" }}
+        />
       </Stack>
     </GestureHandlerRootView>
   );
