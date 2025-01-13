@@ -31,7 +31,7 @@ export default function BottomPlayBar({
         const { sound } = await Audio.Sound.createAsync({ uri: songUrl });
         setSound(sound);
         await sound.playAsync();
-        
+
         alert("Song is playing");
       } else {
         alert("Failed to get song URL");
