@@ -26,6 +26,10 @@ export default function RootLayout() {
           name="advanced-circle-pixo-animation"
           options={{ presentation: "modal" }}
         />
+        <Stack.Screen
+          name="haptic-touch"
+          options={{ presentation: "modal" }}
+        />
       </Stack>
     </GestureHandlerRootView>
   );

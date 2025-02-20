@@ -36,6 +36,11 @@ export default function Index() {
           <Text style={{ fontSize: 20 }}>Advanced Circle Pixo Animation</Text>
         </TouchableOpacity>
       </Link>
+      <Link href={"/haptic-touch"} asChild>
+        <TouchableOpacity>
+          <Text style={{ fontSize: 20 }}>Haptic Touch</Text>
+        </TouchableOpacity>
+      </Link>
     </View>
   );
 }
